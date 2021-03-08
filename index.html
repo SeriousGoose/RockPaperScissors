@@ -1,11 +1,79 @@
 <html>
     <head>
-        
+        <script>
+        function game(){    
+            let playerSelection = prompt("Rock, Paper or Scissors?")
+                playerSelection = playerSelection.toLowerCase();
+                console.log(playerSelection);
+
+            function computerPlays(){
+            let computer = Math.floor(Math.random()*9)
+            
+                if (computer <= 2) {
+                    sign = "Rock";
+                }
+                else if (computer <=5 ){
+                    sign = "Paper";
+                }
+                else if (computer <= 8){
+                    sign = "Scissor"
+                }
+                else sign = "ERROR"
+                return sign;
+            }
+            let computerSelection = computerPlays();
+            console.log(computerSelection);
+
+
+            
+
+            function comparison(playerSelection,computerSelection){
+            if (playerSelection == "rock" && computerSelection == "Rock") 
+                return("That's a tie")
+            
+            if (playerSelection == "rock" && computerSelection == "Paper") {
+                return("You Lose")
+            }
+            if (playerSelection == "rock" && computerSelection == "Scissor") {
+                return("You Win")
+            }
+            if (playerSelection == "paper" && computerSelection == "Paper") 
+                return("That's a tie")
+            
+            if (playerSelection == "paper" && computerSelection == "Scissor") {
+                return("You Lose")
+            }
+            if (playerSelection == "paper" && computerSelection == "Rock") {
+                return("You Win")
+            }
+            if (playerSelection == "scissor" && computerSelection == "Scissor") 
+                return("That's a tie")
+            
+            if (playerSelection == "scissor" && computerSelection == "Rock") {
+                return("You Lose")
+            }
+            if (playerSelection == "scisor" && computerSelection == "Paper") {
+                return("You Win")
+            }
+                else {return ("Please enter a valid response")}
+        }
+            let result = comparison(playerSelection,computerSelection);
+            return result;
+    }       
+    
+    let round1 = game();
+    console.log(round1);
+
+
+
+
+
+
+        </script>
     </head>
     <body>
         <main>
-            <h1>Hello World!</h1>
-            <h2>I am Alive</h2>
+            
         </main>
     </body>
 </html>
