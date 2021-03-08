@@ -2,7 +2,7 @@
     <head>
         <script>
         function game(){    
-            let playerSelection = prompt("Rock, Paper or Scissors?")
+            let playerSelection = prompt("Rock, Paper or Scissor?")
                 playerSelection = playerSelection.toLowerCase();
                 console.log(playerSelection);
 
@@ -52,21 +52,36 @@
             if (playerSelection == "scissor" && computerSelection == "Rock") {
                 return("You Lose")
             }
-            if (playerSelection == "scisor" && computerSelection == "Paper") {
+            if (playerSelection == "scissor" && computerSelection == "Paper") {
                 return("You Win")
             }
                 else {return ("Please enter a valid response")}
         }
             let result = comparison(playerSelection,computerSelection);
+            console.log(result);
             return result;
     }       
-    
-    let round1 = game();
-    console.log(round1);
+    let round;
+    let wins = 0;
+    let loss = 0;
 
+   do {
+    round = game();
+        if (round == "You Win"){
+            wins++
+        }
+            else if (round =="You Lose") {
+                loss++
+            }
+        }
+    while (wins < 3 && loss < 3);
 
-
-
+    if (wins == 3){
+        alert("Game Over: You Win")
+    }
+    if (loss == 3){
+        alert("Game Over: You Lose")
+    }
 
 
         </script>
